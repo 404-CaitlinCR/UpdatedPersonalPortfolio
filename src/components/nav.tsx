@@ -6,7 +6,7 @@ import "./nav.css"
 const sections = ['About', 'Skills', 'Projects', 'Articles', 'Contact']
 
 export default function Navbar() {
-  const scrollTo = (id) => {
+  const scrollTo = (id: string) => {
     document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: 'smooth' })
   }
 
