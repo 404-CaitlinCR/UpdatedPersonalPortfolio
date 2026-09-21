@@ -28,22 +28,22 @@ const SKILLS = {
 }
 const PROJECTS = [
   {
-    title: 'MindMap',
-    description: 'A psychology-informed note-taking app with spaced repetition and mood tracking.',
-    tags: ['React', 'Node.js', 'PostgreSQL'],
-    link: 'https://github.com',
+    title: 'Personal Website',
+    description: 'A simple website to introduce myself as well as share my projects',
+    tags: ['HTML', 'CSS'],
+    link: 'https://github.com/404-CaitlinCR/PersonalPortfolio',
   },
   {
-    title: 'PixelChat',
-    description: 'Real-time chat app with pixel-art avatars and custom emoji builder.',
-    tags: ['WebSockets', 'Canvas API', 'Express'],
-    link: 'https://github.com',
+    title: 'Interactive TO-DO List',
+    description: 'This is a simple and interactive To-Do List, where you can add, mark and remove tasks',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    link: 'https://github.com/404-CaitlinCR/ToDoLists/tree/main/todoHTML',
   },
   {
-    title: 'StudyBuddy',
-    description: 'Collaborative study platform with live sessions, timers, and shared notes.',
-    tags: ['React', 'Firebase', 'TypeScript'],
-    link: 'https://github.com',
+    title: 'Pantry Pal',
+    description: 'An AI assistent created using googles gemini API, this chat box takes in ingredients and creates them into a delicious recipe!. Front end was done using html and css, backend was done using python, flask, and javascript.',
+    tags: ['HTML', 'CSS', 'Python'],
+    link: 'https://github.com/404-CaitlinCR/pantryPals',
   },
   {
     title: 'CogLab',

@@ -15,7 +15,7 @@
   position: relative;
 }
 
-.project-card::before {
+/* .project-card::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -27,7 +27,7 @@
     rgba(160,155,120,0.1) 10px
   );
   pointer-events: none;
-}
+} */
 
 .project-card:hover {
   transform: translateY(-3px);
