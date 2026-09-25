@@ -3,7 +3,7 @@
 //import the style sheet
 import "./nav.css"
 
-const sections = ['About', 'Skills', 'Projects', 'Articles', 'Contact']
+const sections = ['About', 'Skills', 'Experience', 'Projects', 'Articles', 'Contact']
 
 export default function Navbar() {
   const scrollTo = (id: string) => {

@@ -38,7 +38,7 @@
 
 .project-card-img {
   width: 100%;
-  height: 140px;
+  height: 160px;
   background: var(--card-bg-dark);
   overflow: hidden;
 }
@@ -57,7 +57,7 @@
 }
 
 .project-card-body {
-  padding: 14px 16px 16px;
+  padding: 18px 20px 20px;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -65,13 +65,13 @@
 }
 
 .project-card-title {
-  font-size: 0.95rem;
+  font-size: 1.08rem;
   font-weight: 700;
   color: var(--text-dark);
 }
 
 .project-card-desc {
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   color: var(--text-mid);
   line-height: 1.5;
 }

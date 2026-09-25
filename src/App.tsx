@@ -1,10 +1,24 @@
-
+import { useState } from "react";
 import "./App.css"
 import Navbar from "./components/nav";
 import PixelAvatar from "./components/pixelAvatar";
 import animatedPixelMe from "./assets/animatedPixelme.gif";
+import img1 from "./assets/20240808_221245_Original.jpg";
+import img2 from "./assets/IMG_1724_result.jpg";
+import img3 from "./assets/IMG_2052.jpeg";
+import img4 from "./assets/IMG_2120.jpeg";
+import img5 from "./assets/IMG_2367.jpeg";
+import img6 from "./assets/IMG_2629.jpeg";
+import img7 from "./assets/IMG_3231.jpeg";
+import img8 from "./assets/IMG_5587.jpeg";
+import img9 from "./assets/IMG_9699.jpeg";
+import img10 from "./assets/IMG_6941.JPEG";
+import img11 from "./assets/IMG_2089.PNG";
+import img12 from "./assets/BE396E67-1790-43F8-8A3D-67F127D4AD58.JPG";
 import Card from "./components/card";
 import ProjectCard from "./components/projectCard";
+import ImageCarousel from "./components/imageCarousel";
+import ResumeModal from "./components/resumeModal";
 
 //This is the main function for the website to run.
 /*
@@ -17,14 +31,39 @@ I need to create functions that will call:
 const TAGLINE = "CS & PSYC @ UofG"
 
 const SOCIALS = [
-  { label: 'email', value: 'caitlin@email.com', href: 'mailto:caitlin@email.com' },
-  { label: 'linkedin', value: 'linkedin.com/in/caitlin', href: 'https://linkedin.com' },
-  { label: 'github', value: 'github.com/caitlin', href: 'https://github.com' },
+  { label: 'linkedin', icon: 'in', href: 'https://linkedin.com/in/caitlin' },
+  { label: 'github', icon: 'gh', href: 'https://github.com/caitlin' },
+  { label: 'instagram', icon: 'ig', href: 'https://instagram.com/caitlin' },
+]
+
+const RESUME_URL = '/caitlinChanReynolds_Resume.pdf'
+
+// Add photo URLs here (e.g. imported from ./assets) to populate the carousel.
+const CAROUSEL_IMAGES: string[] = [img8, img2,img12, img3,img4,img5,img6,img7,img1,img9,img10,img11]
+const EXPERIENCE = [
+  {
+    role: 'Computer Science Student',
+    organization: 'University of Guelph',
+    period: 'Current',
+    description: 'Studying computer science and psychology while building practical web projects and exploring user-centered design.',
+  },
+  {
+    role: 'Independent Developer',
+    organization: 'Personal Projects',
+    period: 'Ongoing',
+    description: 'Creating responsive applications with React, TypeScript, Python, and modern web technologies.',
+  },
+  {
+    role: 'ITSAC Ambassador',
+    organization: 'University of Guelph',
+    period: 'Ongoing',
+    description: 'add in discription'
+  }
 ]
 const SKILLS = {
-  Frontend: ['React', 'TypeScript', 'Vite', 'CSS / Tailwind', 'Figma'],
-  Backend:  ['Node.js', 'Express', 'Python', 'PostgreSQL', 'REST APIs'],
-  Tools:    ['Git & GitHub', 'VS Code', 'Linux', 'Jest', 'Postman'],
+  Frontend: ['React', 'TypeScript', 'Vite', 'CSS / Tailwind', 'Figma', 'HTML'],
+  Backend:  ['Node.js', 'Express', 'Python', 'REST APIs', 'C'],
+  Tools:    ['Git & GitHub', 'VS Code', 'Linux','Figma'],
 }
 const PROJECTS = [
   {
@@ -76,7 +115,10 @@ const ARTICLES = [
 
 const ABOUT = "Welcome! I'm Caitlin, a third year Computer Science student at the University of Guelph"
 function App(){
+  const [isResumeOpen, setIsResumeOpen] = useState(false)
+
   return (
+    <>
     <div className="app-container">
       <Navbar></Navbar>
       <main className="main-panel">
@@ -92,9 +134,28 @@ function App(){
               </span>
               <div className="social-mini-cards">
                 {SOCIALS.map((s) => (
-                  <div key={s.label} className="social-mini-chip" />
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="social-mini-chip"
+                    aria-label={s.label}
+                  >
+                    {s.icon}
+                  </a>
                 ))}
               </div>
+
+              <ImageCarousel images={CAROUSEL_IMAGES} />
+
+              <button
+                type="button"
+                className="resume-bar"
+                onClick={() => setIsResumeOpen(true)}
+              >
+                View Résumé
+              </button>
             </div>
           </div>
           <div className="about-right">
@@ -115,6 +176,17 @@ function App(){
                   </ul></>
                 ))}
               </div>
+            </Card>
+
+            <h2 className="section-label" id="experience" style={{ marginTop: '18px' }}>Experience</h2>
+            <Card className="experience-card">
+              {EXPERIENCE.map((item) => (
+                <article key={`${item.role}-${item.organization}`} className="experience-item">
+                  <h3 className="experience-role">{item.role}</h3>
+                  <p className="experience-meta">{item.organization} · {item.period}</p>
+                  <p className="experience-description">{item.description}</p>
+                </article>
+              ))}
             </Card>
           </div>
         </section>
@@ -148,6 +220,10 @@ function App(){
         </section>
       </main>
     </div>
+    {isResumeOpen && (
+      <ResumeModal src={RESUME_URL} onClose={() => setIsResumeOpen(false)} />
+    )}
+    </>
   );
 }
 
