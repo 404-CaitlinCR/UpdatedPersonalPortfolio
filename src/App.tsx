@@ -12,13 +12,16 @@ import img6 from "./assets/IMG_2629.jpeg";
 import img7 from "./assets/IMG_3231.jpeg";
 import img8 from "./assets/IMG_5587.jpeg";
 import img9 from "./assets/IMG_9699.jpeg";
-import img10 from "./assets/IMG_6941.JPEG";
-import img11 from "./assets/IMG_2089.PNG";
-import img12 from "./assets/BE396E67-1790-43F8-8A3D-67F127D4AD58.JPG";
+import githubImage from "./assets/github.png";
+import linkedinImage from "./assets/linkedin.png";
 import Card from "./components/card";
 import ProjectCard from "./components/projectCard";
 import ImageCarousel from "./components/imageCarousel";
 import ResumeModal from "./components/resumeModal";
+
+const img10 = new URL('./assets/IMG_6941.JPEG', import.meta.url).href
+const img11 = new URL('./assets/IMG_2089.PNG', import.meta.url).href
+const img12 = new URL('./assets/BE396E67-1790-43F8-8A3D-67F127D4AD58.JPG', import.meta.url).href
 
 //This is the main function for the website to run.
 /*
@@ -31,7 +34,7 @@ I need to create functions that will call:
 const TAGLINE = "CS & PSYC @ UofG"
 
 const SOCIALS = [
-  { label: 'linkedin', icon: 'in', href: 'https://linkedin.com/in/caitlin' },
+  { label: 'linkedin', icon: linkedinImage, href: 'https://linkedin.com/in/caitlin' },
   { label: 'github', icon: 'gh', href: 'https://github.com/caitlin' },
   { label: 'instagram', icon: 'ig', href: 'https://instagram.com/caitlin' },
 ]
@@ -57,7 +60,7 @@ const EXPERIENCE = [
     role: 'ITSAC Ambassador',
     organization: 'University of Guelph',
     period: 'Ongoing',
-    description: 'add in discription'
+    description: 'add in discription '
   }
 ]
 const SKILLS = {
@@ -71,25 +74,29 @@ const PROJECTS = [
     description: 'A simple website to introduce myself as well as share my projects',
     tags: ['HTML', 'CSS'],
     link: 'https://github.com/404-CaitlinCR/PersonalPortfolio',
+    image: githubImage,
   },
   {
     title: 'Interactive TO-DO List',
     description: 'This is a simple and interactive To-Do List, where you can add, mark and remove tasks',
     tags: ['HTML', 'CSS', 'JavaScript'],
     link: 'https://github.com/404-CaitlinCR/ToDoLists/tree/main/todoHTML',
+    image: githubImage,
   },
   {
     title: 'Pantry Pal',
     description: 'An AI assistent created using googles gemini API, this chat box takes in ingredients and creates them into a delicious recipe!. Front end was done using html and css, backend was done using python, flask, and javascript.',
     tags: ['HTML', 'CSS', 'Python'],
     link: 'https://github.com/404-CaitlinCR/pantryPals',
+    image: githubImage,
   },
-  {
-    title: 'CogLab',
-    description: 'Browser-based cognitive psychology experiments for research data collection.',
-    tags: ['Vanilla JS', 'Python', 'Flask'],
-    link: 'https://github.com',
-  },
+  // {
+  //   title: 'CogLab',
+  //   description: 'Browser-based cognitive psychology experiments for research data collection.',
+  //   tags: ['Vanilla JS', 'Python', 'Flask'],
+  //   link: 'https://github.com',
+  //   image: githubImage,
+  // },
 ]
 
 const ARTICLES = [
@@ -99,18 +106,18 @@ const ARTICLES = [
     date: 'Mar 2024',
     link: '#',
   },
-  {
-    title: 'Building Accessible React Apps from the Ground Up',
-    publication: 'Dev.to',
-    date: 'Jan 2024',
-    link: '#',
-  },
-  {
-    title: 'Cognitive Load Theory and Interface Design',
-    publication: 'Research Paper – PSY 3200',
-    date: 'Dec 2023',
-    link: '#',
-  },
+  // {
+  //   title: 'Building Accessible React Apps from the Ground Up',
+  //   publication: 'Dev.to',
+  //   date: 'Jan 2024',
+  //   link: '#',
+  // },
+  // {
+  //   title: 'Cognitive Load Theory and Interface Design',
+  //   publication: 'Research Paper – PSY 3200',
+  //   date: 'Dec 2023',
+  //   link: '#',
+  // },
 ]
 
 const ABOUT = "Welcome! I'm Caitlin, a third year Computer Science student at the University of Guelph"
@@ -142,7 +149,11 @@ function App(){
                     className="social-mini-chip"
                     aria-label={s.label}
                   >
-                    {s.icon}
+                    {s.label === 'linkedin' ? (
+                      <img src={s.icon} alt="LinkedIn" />
+                    ) : (
+                      s.icon
+                    )}
                   </a>
                 ))}
               </div>

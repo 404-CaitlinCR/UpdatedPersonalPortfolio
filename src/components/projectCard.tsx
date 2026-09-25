@@ -1,5 +1,12 @@
-import React from 'react'
 import './ProjectCard.css'
+
+interface ProjectCardProps {
+  title: string
+  description: string
+  tags?: string[]
+  link?: string
+  image?: string
+}
 
 /*
   ProjectCard component
@@ -13,7 +20,7 @@ import './ProjectCard.css'
 
   This component returns an anchor element so the whole card is clickable.
 */
-export default function ProjectCard({ title, description, tags = [], link, image }) {
+export default function ProjectCard({ title, description, tags = [], link, image }: ProjectCardProps) {
   return (
     <a
       className="project-card"

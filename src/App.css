@@ -81,6 +81,12 @@
   transform: translateY(-1px);
 }
 
+.social-mini-chip img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
 .resume-bar {
   display: flex;
   align-items: center;

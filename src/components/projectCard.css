@@ -3,8 +3,9 @@
   display: flex;
   flex-direction: column;
   background: var(--card-bg);
-  border-radius: var(--border-radius);
+  border-radius: 14px !important;
   overflow: hidden;
+  clip-path: inset(0 round 14px);
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.22),
     0 4px 16px rgba(0,0,0,0.13);
@@ -39,6 +40,7 @@
 .project-card-img {
   width: 100%;
   height: 160px;
+  border-radius: inherit;
   background: var(--card-bg-dark);
   overflow: hidden;
 }
@@ -58,6 +60,7 @@
 
 .project-card-body {
   padding: 18px 20px 20px;
+  border-radius: 0 0 14px 14px;
   display: flex;
   flex-direction: column;
   gap: 6px;
