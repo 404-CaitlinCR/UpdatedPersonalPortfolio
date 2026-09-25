@@ -1,31 +1,47 @@
 .pixel-avatar-wrapper {
-  /* PixelAvatar styles: sizes and fallback placeholder */
-  width: 110px;
-  height: 130px;
+  /* PixelAvatar styles: sizes, and a backdrop shape behind the character */
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 280px;
   box-sizing: border-box;
-  padding: 6px;
-  border-radius: 14px;
-  overflow: hidden;
-  background: var(--card-bg);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   flex-shrink: 0;
-  image-rendering: pixelated;
 }
 
+/* Sits behind and peeks out from under the illustration, instead of
+   framing the whole image like a card. */
+/* .pixel-avatar-backdrop {
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  height: 68%;
+  border-radius: 20px;
+  background: var(--card-bg);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+} */
+
 .pixel-avatar-img {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   image-rendering: pixelated;
-  
 }
 
 .pixel-avatar-placeholder {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 4rem;
-  background: var(--card-bg-dark);
 }
