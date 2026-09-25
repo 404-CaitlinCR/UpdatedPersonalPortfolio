@@ -12,6 +12,7 @@ import img6 from "./assets/IMG_2629.jpeg";
 import img7 from "./assets/IMG_3231.jpeg";
 import img8 from "./assets/IMG_5587.jpeg";
 import img9 from "./assets/IMG_9699.jpeg";
+import img13 from "./assets/image.png";
 import githubImage from "./assets/github.png";
 import linkedinImage from "./assets/linkedin.png";
 import Card from "./components/card";
@@ -22,6 +23,8 @@ import ResumeModal from "./components/resumeModal";
 const img10 = new URL('./assets/IMG_6941.JPEG', import.meta.url).href
 const img11 = new URL('./assets/IMG_2089.PNG', import.meta.url).href
 const img12 = new URL('./assets/BE396E67-1790-43F8-8A3D-67F127D4AD58.JPG', import.meta.url).href
+
+import protfolioImg from "./assets/websitPortfolio.png";
 
 //This is the main function for the website to run.
 /*
@@ -35,14 +38,14 @@ const TAGLINE = "CS & PSYC @ UofG"
 
 const SOCIALS = [
   { label: 'linkedin', icon: linkedinImage, href: 'https://linkedin.com/in/caitlin' },
-  { label: 'github', icon: 'gh', href: 'https://github.com/caitlin' },
+  { label: 'github', icon: githubImage, href: 'https://github.com/404-CaitlinCR' },
   { label: 'instagram', icon: 'ig', href: 'https://instagram.com/caitlin' },
 ]
 
 const RESUME_URL = '/caitlinChanReynolds_Resume.pdf'
 
 // Add photo URLs here (e.g. imported from ./assets) to populate the carousel.
-const CAROUSEL_IMAGES: string[] = [img8, img2,img12, img3,img4,img5,img6,img7,img1,img9,img10,img11]
+const CAROUSEL_IMAGES: string[] = [img8, img2,img12,img13, img3,img4,img5,img6,img7,img1,img9,img10,img11]
 const EXPERIENCE = [
   {
     role: 'Computer Science Student',
@@ -74,7 +77,7 @@ const PROJECTS = [
     description: 'A simple website to introduce myself as well as share my projects',
     tags: ['HTML', 'CSS'],
     link: 'https://github.com/404-CaitlinCR/PersonalPortfolio',
-    image: githubImage,
+    image: protfolioImg,
   },
   {
     title: 'Interactive TO-DO List',
@@ -101,23 +104,23 @@ const PROJECTS = [
 
 const ARTICLES = [
   {
-    title: 'The Psychology of Dark Patterns in UX',
-    publication: 'UofG Design Review',
-    date: 'Mar 2024',
-    link: '#',
+    title: 'Improving Prediction of ADR in Elderly Patients Using Machine Learning Algorithms',
+    publication: 'STEM fellowship',
+    date: 'July 2025',
+    link: 'https://underline.io/lecture/120448-improving-prediction-of-adr-in-elderly-patients-using-machine-learning-algorithms?posterExpanded=true',
   },
-  // {
-  //   title: 'Building Accessible React Apps from the Ground Up',
-  //   publication: 'Dev.to',
-  //   date: 'Jan 2024',
-  //   link: '#',
-  // },
-  // {
-  //   title: 'Cognitive Load Theory and Interface Design',
-  //   publication: 'Research Paper – PSY 3200',
-  //   date: 'Dec 2023',
-  //   link: '#',
-  // },
+  {
+    title: 'PVNC Catholic’s Aviation and Aerospace Specialist High Skills Major Program taking off',
+    publication: 'PVNC Catholic District School Board',
+    date: 'Sept 2023',
+    link: 'https://www.pvnccdsb.on.ca/pvnc-catholics-aviation-and-aerospace-specialist-high-skills-major-program-taking-off/',
+  },
+  {
+    title: 'Asian heritage celebrated at Holy Cross',
+    publication: 'Peterborough Examiner',
+    date: 'May 2024',
+    link: 'https://www.thepeterboroughexaminer.com/news/asian-heritage-celebrated-at-holy-cross/article_389c9e7c-091c-5f99-800c-307907e94d70.html',
+  },
 ]
 
 const ABOUT = "Welcome! I'm Caitlin, a third year Computer Science student at the University of Guelph"
@@ -149,15 +152,15 @@ function App(){
                     className="social-mini-chip"
                     aria-label={s.label}
                   >
-                    {s.label === 'linkedin' ? (
-                      <img src={s.icon} alt="LinkedIn" />
+                    {s.label === 'linkedin' || s.label === 'github' ? (
+                      <img src={s.icon} alt={s.label} />
                     ) : (
                       s.icon
                     )}
                   </a>
                 ))}
               </div>
-
+              {/*Code for inserting images for the carousel */}
               <ImageCarousel images={CAROUSEL_IMAGES} />
 
               <button
@@ -176,7 +179,7 @@ function App(){
             </Card>
 
             {/* skills section */}
-            <h2 className="section-label" id="skills" style={{ marginTop: '18px' }}>Skills</h2>
+            <h2 className="section-label" id="skills" style={{ marginTop: '18px', color: "antiquewhite" }}>Skills</h2>
             <Card className="skills-card">
               <div className="skills-grid">
                 {Object.entries(SKILLS).map(([category, items])=> (
@@ -189,7 +192,7 @@ function App(){
               </div>
             </Card>
 
-            <h2 className="section-label" id="experience" style={{ marginTop: '18px' }}>Experience</h2>
+            <h2 className="section-label" id="experience" style={{ marginTop: '18px', color: "antiquewhite" }}>Experience</h2>
             <Card className="experience-card">
               {EXPERIENCE.map((item) => (
                 <article key={`${item.role}-${item.organization}`} className="experience-item">
@@ -204,7 +207,7 @@ function App(){
          {/* ── PROJECTS ── */}
         {/* Projects: mapped from the `PROJECTS` array and rendered with `ProjectCard` */}
         <section id="projects" className="section">
-          <h2 className="section-heading">Projects</h2>
+          <h2 className="section-heading"style={{color: "antiquewhite"}}>Projects</h2>
           <div className="projects-grid">
             {PROJECTS.map((p) => (
               <ProjectCard key={p.title} {...p} />
