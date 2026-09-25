@@ -9,7 +9,15 @@ import './card.css'
   - `className`: optional extra CSS class names
   - `style`: optional inline styles
 */
-export default function Card({ children, className = '', style = {} }) {
+import type { CSSProperties, ReactNode } from 'react'
+
+type CardProps = {
+  children: ReactNode
+  className?: string
+  style?: CSSProperties
+}
+
+export default function Card({ children, className = '', style = {} }: CardProps) {
   return (
     <div className={`card ${className}`} style={style}>
       {children}

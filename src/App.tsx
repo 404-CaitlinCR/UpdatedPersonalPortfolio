@@ -42,7 +42,7 @@ const SOCIALS = [
   { label: 'instagram', icon: 'ig', href: 'https://instagram.com/caitlin' },
 ]
 
-const RESUME_URL = '/caitlinChanReynolds_Resume.pdf'
+const RESUME_URL = '/CCR_Resume.pdf'
 
 // Add photo URLs here (e.g. imported from ./assets) to populate the carousel.
 const CAROUSEL_IMAGES: string[] = [img8, img2,img12,img13, img3,img4,img5,img6,img7,img1,img9,img10,img11]
