@@ -1,5 +1,5 @@
 // import React from 'react'
-import './PixelAvatar.css'
+import './pixelAvatar.css'
 
 /*
   PixelAvatar: small presentational component
