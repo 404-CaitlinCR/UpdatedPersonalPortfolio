@@ -15,7 +15,6 @@ import img9 from "./assets/IMG_9699.jpeg";
 import img13 from "./assets/image.png";
 import githubImage from "./assets/github.png";
 import linkedinImage from "./assets/linkedin.png";
-import isntaImg from "./assets/isnta.PNG";
 import Card from "./components/card";
 import ProjectCard from "./components/projectCard";
 import ImageCarousel from "./components/imageCarousel";
@@ -24,6 +23,7 @@ import ResumeModal from "./components/resumeModal";
 const img10 = new URL('./assets/IMG_6941.JPEG', import.meta.url).href
 const img11 = new URL('./assets/IMG_2089.PNG', import.meta.url).href
 const img12 = new URL('./assets/BE396E67-1790-43F8-8A3D-67F127D4AD58.JPG', import.meta.url).href
+const isntaImg = new URL('./assets/isnta.PNG', import.meta.url).href
 
 import protfolioImg from "./assets/websitPortfolio.png";
 import todoImg from "./assets/todo.png";
@@ -53,7 +53,7 @@ const EXPERIENCE = [
     role: 'Computer Science Student',
     organization: 'University of Guelph',
     period: 'Current',
-    description: 'Studying computer science and psychology while building practical web projects and exploring user-centered design.',
+    description: 'Studying Computer Science and Psychology, specializing in Cybersecurity. While devloping my skills in Web design and Game Development.',
   },
   {
     role: 'Independent Developer',
@@ -95,13 +95,13 @@ const PROJECTS = [
     link: 'https://github.com/404-CaitlinCR/pantryPals',
     image: githubImage,
   },
-  // {
-  //   title: 'CogLab',
-  //   description: 'Browser-based cognitive psychology experiments for research data collection.',
-  //   tags: ['Vanilla JS', 'Python', 'Flask'],
-  //   link: 'https://github.com',
-  //   image: githubImage,
-  // },
+  {
+    title: 'Treasure Runner',
+    description: 'A terminal-based treasure game with a C engine and a Python interface connected through ctypes. Explore rooms, use portals, move objects, and save progress in JSON.',
+    tags: ['C', 'Python'],
+    link: 'https://github.com',
+    image: githubImage,
+  },
 ]
 
 const ARTICLES = [
