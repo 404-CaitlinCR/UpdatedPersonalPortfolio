@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css"
 import Navbar from "./components/nav";
 import PixelAvatar from "./components/pixelAvatar";
@@ -15,6 +15,7 @@ import img9 from "./assets/IMG_9699.jpeg";
 import img13 from "./assets/image.png";
 import githubImage from "./assets/github.png";
 import linkedinImage from "./assets/linkedin.png";
+import isntaImg from "./assets/isnta.PNG";
 import Card from "./components/card";
 import ProjectCard from "./components/projectCard";
 import ImageCarousel from "./components/imageCarousel";
@@ -25,6 +26,7 @@ const img11 = new URL('./assets/IMG_2089.PNG', import.meta.url).href
 const img12 = new URL('./assets/BE396E67-1790-43F8-8A3D-67F127D4AD58.JPG', import.meta.url).href
 
 import protfolioImg from "./assets/websitPortfolio.png";
+import todoImg from "./assets/todo.png";
 
 //This is the main function for the website to run.
 /*
@@ -37,9 +39,9 @@ I need to create functions that will call:
 const TAGLINE = "CS & PSYC @ UofG"
 
 const SOCIALS = [
-  { label: 'linkedin', icon: linkedinImage, href: 'https://linkedin.com/in/caitlin' },
+  { label: 'linkedin', icon: linkedinImage, href: 'https://www.linkedin.com/in/caitlin-chan-reynolds/' },
   { label: 'github', icon: githubImage, href: 'https://github.com/404-CaitlinCR' },
-  { label: 'instagram', icon: 'ig', href: 'https://instagram.com/caitlin' },
+  { label: 'instagram', icon: isntaImg, href: 'https://instagram.com/caitlin' },
 ]
 
 const RESUME_URL = '/CCR_Resume.pdf'
@@ -62,13 +64,13 @@ const EXPERIENCE = [
   {
     role: 'ITSAC Ambassador',
     organization: 'University of Guelph',
-    period: 'Ongoing',
-    description: 'add in discription '
+    period: '2026-2027',
+    description: 'Selected as a Student Representative on the IT Student Advisory Committee; provide feedback on campus IT services and contribute to continuous improvement initiatives, with reflections on IT service delivery and career pathways.'
   }
 ]
 const SKILLS = {
-  Frontend: ['React', 'TypeScript', 'Vite', 'CSS / Tailwind', 'Figma', 'HTML'],
-  Backend:  ['Node.js', 'Express', 'Python', 'REST APIs', 'C'],
+  Frontend: ['React', 'TypeScript', 'Vite', 'CSS / Tailwind', 'HTML', "JavaScript"],
+  Backend:  ['Node.js', 'Python', 'C', 'Java'],
   Tools:    ['Git & GitHub', 'VS Code', 'Linux','Figma'],
 }
 const PROJECTS = [
@@ -84,7 +86,7 @@ const PROJECTS = [
     description: 'This is a simple and interactive To-Do List, where you can add, mark and remove tasks',
     tags: ['HTML', 'CSS', 'JavaScript'],
     link: 'https://github.com/404-CaitlinCR/ToDoLists/tree/main/todoHTML',
-    image: githubImage,
+    image: todoImg,
   },
   {
     title: 'Pantry Pal',
@@ -123,9 +125,52 @@ const ARTICLES = [
   },
 ]
 
-const ABOUT = "Welcome! I'm Caitlin, a third year Computer Science student at the University of Guelph"
+const ABOUT = "Welcome! I'm Caitlin, a third year Computer Science student at the University of Guelph! I'm currently interested in Cybersecurity, Game Development, and Web development."
+const NAME = "Caitlin Chan Reynolds"
 function App(){
   const [isResumeOpen, setIsResumeOpen] = useState(false)
+  const [typedAbout, setTypedAbout] = useState('')
+  const [typedName, setTypedName] = useState('')
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setTypedAbout(ABOUT)
+      return
+    }
+
+    const characters = Array.from(ABOUT)
+    let characterIndex = 0
+    const timer = window.setInterval(() => {
+      characterIndex += 1
+      setTypedAbout(characters.slice(0, characterIndex).join(''))
+
+      if (characterIndex >= characters.length) {
+        window.clearInterval(timer)
+      }
+    }, 28)
+
+    return () => window.clearInterval(timer)
+  }, [])
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setTypedName(NAME)
+      return
+    }
+
+    const characters = Array.from(NAME)
+    let characterIndex = 0
+    const timer = window.setInterval(() => {
+      characterIndex += 1
+      setTypedName(characters.slice(0, characterIndex).join(''))
+
+      if (characterIndex >= characters.length) {
+        window.clearInterval(timer)
+      }
+    }, 60)
+
+    return () => window.clearInterval(timer)
+  }, [])
 
   return (
     <>
@@ -133,7 +178,7 @@ function App(){
       <Navbar></Navbar>
       <main className="main-panel">
             <div  className="title">
-                <h1> Caitlin Chan Reynolds </h1>
+              <h1>{typedName}<span className="typing-cursor" aria-hidden="true" /></h1>
             </div>
         <section id="about" className="aboutMe">
           <div className="about-left"> {/*the left side of the about me section*/}
@@ -152,11 +197,7 @@ function App(){
                     className="social-mini-chip"
                     aria-label={s.label}
                   >
-                    {s.label === 'linkedin' || s.label === 'github' ? (
-                      <img src={s.icon} alt={s.label} />
-                    ) : (
-                      s.icon
-                    )}
+                    <img src={s.icon} alt={s.label} />
                   </a>
                 ))}
               </div>
@@ -175,7 +216,10 @@ function App(){
           <div className="about-right">
             <h2 className="section-label" style={{marginTop: "0rem", color: "antiquewhite"}}>About Me</h2>
             <Card className="about-card">
-              <p className="about-text">{ABOUT}</p>
+              <p className="about-text">
+                {typedAbout}
+                <span className="typing-cursor" aria-hidden="true" />
+              </p>
             </Card>
 
             {/* skills section */}

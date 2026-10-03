@@ -342,3 +342,24 @@
     transition: none;
   }
 }
+
+.typing-cursor {
+  display: inline-block;
+  height: 0.95em;
+  margin-left: 2px;
+  border-left: 2px solid currentColor;
+  vertical-align: -0.1em;
+  animation: typing-cursor-blink 0.8s steps(2, start) infinite;
+}
+
+@keyframes typing-cursor-blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typing-cursor {
+    animation: none;
+  }
+}
