@@ -16,6 +16,7 @@ import img13 from "./assets/image.png";
 import githubImage from "./assets/github.png";
 import linkedinImage from "./assets/linkedin.png";
 import Card from "./components/card";
+import ContactForm from "./components/ContactForm";
 import ProjectCard from "./components/projectCard";
 import ImageCarousel from "./components/imageCarousel";
 import ResumeModal from "./components/resumeModal";
@@ -28,6 +29,7 @@ const isntaImg = new URL('./assets/isnta.PNG', import.meta.url).href
 import protfolioImg from "./assets/websitPortfolio.png";
 import todoImg from "./assets/todo.png";
 import pantryPal from "./assets/pantrypals.jpg";
+import vitalumImg from "./assets/vitalum.png";
 
 //This is the main function for the website to run.
 /*
@@ -45,7 +47,7 @@ const SOCIALS = [
   { label: 'instagram', icon: isntaImg, href: 'https://instagram.com/caitlin' },
 ]
 
-const RESUME_URL = '/CCR_Resume.pdf'
+const RESUME_URL = '/CaitlinCR_Resume2026.pdf'
 
 // Add photo URLs here (e.g. imported from ./assets) to populate the carousel.
 const CAROUSEL_IMAGES: string[] = [img8, img2,img12,img13, img3,img4,img5,img6,img7,img1,img9,img10,img11]
@@ -57,8 +59,8 @@ const EXPERIENCE = [
     description: 'Studying Computer Science and Psychology, specializing in Cybersecurity. While devloping my skills in Web design and Game Development.',
   },
   {
-    role: 'Independent Developer',
-    organization: 'Personal Projects',
+    role: 'UI/UX Engineer',
+    organization: 'Vitalum',
     period: 'Ongoing',
     description: 'Creating responsive applications with React, TypeScript, Python, and modern web technologies.',
   },
@@ -83,18 +85,18 @@ const PROJECTS = [
     image: protfolioImg,
   },
   {
-    title: 'Interactive TO-DO List',
-    description: 'This is a simple and interactive To-Do List, where you can add, mark and remove tasks',
-    tags: ['HTML', 'CSS', 'JavaScript'],
-    link: 'https://github.com/404-CaitlinCR/ToDoLists/tree/main/todoHTML',
-    image: todoImg,
-  },
-  {
     title: 'Pantry Pal',
     description: 'An AI assistent created using googles gemini API, this chat box takes in ingredients and creates them into a delicious recipe!. Front end was done using html and css, backend was done using python, flask, and javascript.',
     tags: ['HTML', 'CSS', 'Python'],
     link: 'https://github.com/404-CaitlinCR/pantryPals',
     image: pantryPal,
+  },
+      {
+    title: 'Vitalum',
+    description: "Vitalum is an AI-powered tool that tailors resumes to specific job descriptions. I'm leading the UI/UX redesign and handling infrastructure for the next version.",
+    tags: ['C', 'Python'],
+    link: 'https://www.vitalum.ca/',
+    image: vitalumImg,
   },
   {
     title: 'Treasure Runner',
@@ -103,6 +105,13 @@ const PROJECTS = [
     link: 'https://github.com',
     image: githubImage,
   },
+    {
+    title: 'Interactive TO-DO List',
+    description: 'This is a simple and interactive To-Do List, where you can add, mark and remove tasks',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    link: 'https://github.com/404-CaitlinCR/ToDoLists/tree/main/todoHTML',
+    image: todoImg,
+  }
 ]
 
 const ARTICLES = [
@@ -262,7 +271,7 @@ function App(){
 
         {/* ── ARTICLES ── */}
         <section id="articles" className="section">
-          <h2 className="section-heading">Article features and Papers</h2>
+          <h2 className="section-heading" style={{color: "antiquewhite"}}>Article features and Papers</h2>
           <Card className="articles-card">
             <div className="articles-list">
               {ARTICLES.map((a) => (
@@ -276,6 +285,34 @@ function App(){
               ))}
             </div>
           </Card>
+        </section>
+
+        <section id="contact" className="section contact-section">
+          <h2 className="section-heading" style={{color: "antiquewhite"}}>Contact</h2>
+          <div className="contact-grid">
+            <Card className="contact-info-card">
+              <h3 className="contact-panel-title">Other ways to connect</h3>
+              <p className="contact-panel-description">Find me on these platforms.</p>
+              <div className="contact-social-links">
+                {SOCIALS.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="contact-social-link"
+                  >
+                    <img src={social.icon} alt="" />
+                    <span>{social.label}</span>
+                  </a>
+                ))}
+              </div>
+            </Card>
+            <Card className="contact-form-card">
+              <h3 className="contact-panel-title">Send a message</h3>
+              <ContactForm />
+            </Card>
+          </div>
         </section>
       </main>
     </div>
