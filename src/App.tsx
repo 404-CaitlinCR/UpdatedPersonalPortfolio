@@ -27,6 +27,7 @@ const isntaImg = new URL('./assets/isnta.PNG', import.meta.url).href
 
 import protfolioImg from "./assets/websitPortfolio.png";
 import todoImg from "./assets/todo.png";
+import pantryPal from "./assets/pantrypals.jpg";
 
 //This is the main function for the website to run.
 /*
@@ -93,7 +94,7 @@ const PROJECTS = [
     description: 'An AI assistent created using googles gemini API, this chat box takes in ingredients and creates them into a delicious recipe!. Front end was done using html and css, backend was done using python, flask, and javascript.',
     tags: ['HTML', 'CSS', 'Python'],
     link: 'https://github.com/404-CaitlinCR/pantryPals',
-    image: githubImage,
+    image: pantryPal,
   },
   {
     title: 'Treasure Runner',
