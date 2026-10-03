@@ -41,7 +41,8 @@
 
 .contact-textarea {
   min-height: 137px;
-  resize: vertical;
+  resize: none;
+  overflow-y: auto;
 }
 
 .contact-input::placeholder,
@@ -98,6 +99,16 @@
   font-weight: 700;
   line-height: 1.4;
   animation: fadeIn 0.3s ease;
+}
+
+.contact-notice {
+  padding: 10px 12px;
+  border-left: 3px solid #8f3737;
+  border-radius: 6px;
+  background: rgba(143, 55, 55, 0.12);
+  color: var(--text-dark, #29382b);
+  font-size: 0.82rem;
+  line-height: 1.45;
 }
 
 .contact-status.is-error {

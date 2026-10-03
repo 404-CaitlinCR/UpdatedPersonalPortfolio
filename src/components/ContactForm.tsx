@@ -60,6 +60,9 @@ export default function ContactForm() {
 
   return (
     <form className="contact-form-wrapper" onSubmit={handleSubmit}>
+      <div className="contact-notice" role="status">
+        The email form is currently unavailable. Please reach out through one of the social links instead.
+      </div>
       {status && (
         <div
           className={`contact-status is-${status.kind}`}
