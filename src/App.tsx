@@ -44,7 +44,7 @@ const TAGLINE = "CS & PSYC @ UofG"
 const SOCIALS = [
   { label: 'linkedin', icon: linkedinImage, href: 'https://www.linkedin.com/in/caitlin-chan-reynolds/' },
   { label: 'github', icon: githubImage, href: 'https://github.com/404-CaitlinCR' },
-  { label: 'instagram', icon: isntaImg, href: 'https://instagram.com/caitlin' },
+  { label: 'instagram', icon: isntaImg, href: 'https://instagram.com/caitlin_chanreynolds' },
 ]
 
 const RESUME_URL = '/CaitlinCR_Resume2026.pdf'
@@ -94,7 +94,7 @@ const PROJECTS = [
       {
     title: 'Vitalum',
     description: "Vitalum is an AI-powered tool that tailors resumes to specific job descriptions. I'm leading the UI/UX redesign and handling infrastructure for the next version.",
-    tags: ['C', 'Python'],
+    tags: ['HTML', 'CSS', 'JavaScript/TypeScript'],
     link: 'https://www.vitalum.ca/',
     image: vitalumImg,
   },
