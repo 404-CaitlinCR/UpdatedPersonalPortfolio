@@ -3,15 +3,15 @@ import "./App.css"
 import Navbar from "./components/nav";
 import PixelAvatar from "./components/pixelAvatar";
 import animatedPixelMe from "./assets/animatedPixelme.gif";
-import img1 from "./assets/20240808_221245_Original.jpg";
+// import img1 from "./assets/20240808_221245_Original.jpg";
 import img2 from "./assets/IMG_1724_result.jpg";
-import img3 from "./assets/IMG_2052.jpeg";
+// import img3 from "./assets/IMG_2052.jpeg";
 import img4 from "./assets/IMG_2120.jpeg";
 import img5 from "./assets/IMG_2367.jpeg";
-import img6 from "./assets/IMG_2629.jpeg";
-import img7 from "./assets/IMG_3231.jpeg";
+// import img6 from "./assets/IMG_2629.jpeg";
+// import img7 from "./assets/IMG_3231.jpeg";
 import img8 from "./assets/IMG_5587.jpeg";
-import img9 from "./assets/IMG_9699.jpeg";
+// import img9 from "./assets/IMG_9699.jpeg";
 import img13 from "./assets/image.png";
 import githubImage from "./assets/github.png";
 import linkedinImage from "./assets/linkedin.png";
@@ -22,8 +22,8 @@ import ImageCarousel from "./components/imageCarousel";
 import ResumeModal from "./components/resumeModal";
 
 const img10 = new URL('./assets/IMG_6941.JPEG', import.meta.url).href
-const img11 = new URL('./assets/IMG_2089.PNG', import.meta.url).href
-const img12 = new URL('./assets/BE396E67-1790-43F8-8A3D-67F127D4AD58.JPG', import.meta.url).href
+// const img11 = new URL('./assets/IMG_2089.PNG', import.meta.url).href
+// const img12 = new URL('./assets/BE396E67-1790-43F8-8A3D-67F127D4AD58.JPG', import.meta.url).href
 const isntaImg = new URL('./assets/isnta.PNG', import.meta.url).href
 
 import protfolioImg from "./assets/websitPortfolio.png";
