@@ -50,7 +50,7 @@ const SOCIALS = [
 const RESUME_URL = '/CaitlinCR_Resume2026.pdf'
 
 // Add photo URLs here (e.g. imported from ./assets) to populate the carousel.
-const CAROUSEL_IMAGES: string[] = [img8, img2,img12,img13, img3,img4,img5,img6,img7,img1,img9,img10,img11]
+const CAROUSEL_IMAGES: string[] = [img8, img2,img13,img4,img5,img10]
 const EXPERIENCE = [
   {
     role: 'Computer Science Student',
