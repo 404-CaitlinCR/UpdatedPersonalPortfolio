@@ -69,7 +69,7 @@ const EXPERIENCE = [
     role: 'Video Editor',
     organization: 'GCSS - Guelph Cybersecurity Society',
     period: 'Ongoing',
-    description: 'Edit and post video content for the clubs social media pages'
+    description: 'Edit and post video content for the club social media pages'
   },
   {
     role: 'UI/UX Engineer',
