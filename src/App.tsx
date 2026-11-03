@@ -30,6 +30,7 @@ import protfolioImg from "./assets/websitPortfolio.png";
 import todoImg from "./assets/todo.png";
 import pantryPal from "./assets/pantrypals.jpg";
 import vitalumImg from "./assets/vitalum.png";
+import pocketPetsImg from "./assets/PocketPets.png";
 
 //This is the main function for the website to run.
 /*
@@ -85,13 +86,20 @@ const PROJECTS = [
     image: protfolioImg,
   },
   {
+    title: 'Pocket Pets TODO',
+    description: 'A to-do list with a pixel-art virtual pet. Finish tasks to earn coins, then spend them to feed, dress up and grow your pet.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Supabase', 'HTML Canvas'],
+    link: 'https://pocketpets.vercel.app/',
+    image: pocketPetsImg,
+  },
+  {
     title: 'Pantry Pal',
     description: 'An AI assistent created using googles gemini API, this chat box takes in ingredients and creates them into a delicious recipe!. Front end was done using html and css, backend was done using python, flask, and javascript.',
     tags: ['HTML', 'CSS', 'Python'],
     link: 'https://github.com/404-CaitlinCR/pantryPals',
     image: pantryPal,
   },
-      {
+  {
     title: 'Vitalum',
     description: "Vitalum is an AI-powered tool that tailors resumes to specific job descriptions. I'm leading the UI/UX redesign and handling infrastructure for the next version.",
     tags: ['HTML', 'CSS', 'JavaScript/TypeScript'],

@@ -38,11 +38,16 @@
 }
 
 .project-card-img {
-  width: 100%;
+  width: auto;
   height: 160px;
-  border-radius: inherit;
+  margin: 12px 12px 0;
+  border-radius: 8px;
+  border: 3px solid #405e43;
+  box-sizing: border-box;
   background: var(--card-bg-dark);
   overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
 }
 
 .project-card-img img {
