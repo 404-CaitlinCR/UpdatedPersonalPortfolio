@@ -60,16 +60,22 @@ const EXPERIENCE = [
     description: 'Studying Computer Science and Psychology, specializing in Cybersecurity. While devloping my skills in Web design and Game Development.',
   },
   {
-    role: 'UI/UX Engineer',
-    organization: 'Vitalum',
-    period: 'Ongoing',
-    description: 'Creating responsive applications with React, TypeScript, Python, and modern web technologies.',
-  },
-  {
     role: 'ITSAC Ambassador',
     organization: 'University of Guelph',
     period: '2026-2027',
     description: 'Selected as a Student Representative on the IT Student Advisory Committee; provide feedback on campus IT services and contribute to continuous improvement initiatives, with reflections on IT service delivery and career pathways.'
+  },
+  {
+    role: 'Video Editor',
+    organization: 'GCSS - Guelph Cybersecurity Society',
+    period: 'Ongoing',
+    description: 'Edit and post video content for the clubs social media pages'
+  },
+  {
+    role: 'UI/UX Engineer',
+    organization: 'Vitalum',
+    period: 'Ongoing',
+    description: 'Creating responsive applications with React, TypeScript, Python, and modern web technologies.',
   }
 ]
 const SKILLS = {
